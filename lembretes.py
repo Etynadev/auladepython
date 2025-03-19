@@ -1,8 +1,12 @@
-import time
-def lembrete_atividade(intervalo_minutos=10):
-    contador = 1
-    while True:
-        print(F"\n Tempo encerrado(Lembrete{contador})")
-        contador += 1
-        time.sleep(intervalo_minutos*60)
-lembrete_atividade()
+from plyer import notification
+
+def lembrete(titulo, mensagem):
+    notification.notify(
+    title=titulo,
+    message=mensagem,
+    app_name='lembrete',
+    timeout=10
+)
+lembrete("tomar medicação", " é seu tratamento")
+
+
